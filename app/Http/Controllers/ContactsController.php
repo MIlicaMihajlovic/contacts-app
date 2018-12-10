@@ -44,9 +44,9 @@ class ContactsController extends Controller
      * @param  \App\Contact  $contact
      * @return \Illuminate\Http\Response
      */
-    public function show(Contact $contact)
+    public function show(Contact $contact) //ovde je vec bindovao
     {
-        //
+        return $contact;
     }
 
     /**
@@ -80,6 +80,7 @@ class ContactsController extends Controller
      */
     public function destroy(Contact $contact)
     {
-        //
+        $contact->delete();
+        return $contact;
     }
 }

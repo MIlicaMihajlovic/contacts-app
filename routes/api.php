@@ -20,4 +20,6 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 //Route::get('contacts', 'ContactsController@index');
 
-Route::resource('contacts', ContactsController::class);
+Route::resource('contacts', ContactsController::class)
+    ->except(['create', 'edit']);
+    //da ne bi vracalo gresku 500 onda stavimo da ne ide na te rute
